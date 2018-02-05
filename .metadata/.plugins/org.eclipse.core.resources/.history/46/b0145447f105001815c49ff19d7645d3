@@ -1,0 +1,28 @@
+package com.objava.naucnih.radova.configuration;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.marklogic.client.DatabaseClient;
+import com.marklogic.client.DatabaseClientFactory;
+
+@Configuration
+public class MarkLogicClientConfig {
+
+	@Bean
+	public DatabaseClient markLogicClient(){
+		// create the client
+		DatabaseClient client = DatabaseClientFactory.newClient(MarkLogicConfig.host,
+				MarkLogicConfig.port, MarkLogicConfig.admin,
+				MarkLogicConfig.password, MarkLogicConfig.authType);
+		return client;
+	}
+	
+	@Bean
+    public MarkLogicOperations marklogicTemplate() {
+        DatabaseClient client = DatabaseClientFactory.newClient(MarkLogicConfig.host,
+				MarkLogicConfig.port, MarkLogicConfig.admin,
+				MarkLogicConfig.password, MarkLogicConfig.authType);
+        return new MarkLogicTemplate(client);
+    }
+}

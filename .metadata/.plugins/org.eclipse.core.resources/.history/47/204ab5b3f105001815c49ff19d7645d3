@@ -1,0 +1,38 @@
+package com.objava.naucnih.radova.configuration;
+
+public class BasicConfig {
+
+	/**
+     * Has to be static so that Spring instantiates it first.
+     */
+    @Bean
+    public static PropertySourcesPlaceholderConfigurer propertyConfigurer() {
+        PropertySourcesPlaceholderConfigurer c = new PropertySourcesPlaceholderConfigurer();
+        c.setIgnoreResourceNotFound(true);
+        return c;
+    }
+
+    @Bean
+    public DatabaseClientConfig databaseClientConfig() {
+        return new DatabaseClientConfig(getMlHost(), getRestPort(), getMlUsername(), getMlPassword());
+    }
+
+    @Bean
+    public XccTemplate xccTemplate() {
+        return new XccTemplate(String.format("xcc://%s:%s@%s:8000/%s", getMlUsername(), getMlPassword(), getMlHost(),
+                buildContentDatabaseName(mlAppName)));
+    }
+
+    /**
+     * Used for building an XccTemplate; can be overridden when this method's assumption about the name isn't true.
+     */
+    protected String buildContentDatabaseName(String mlAppName) {
+        return mlAppName + "-content";
+    }
+
+    @Bean
+    public DatabaseClientProvider databaseClientProvider() {
+        return new SimpleDatabaseClientProvider(databaseClientConfig());
+    }
+    
+}

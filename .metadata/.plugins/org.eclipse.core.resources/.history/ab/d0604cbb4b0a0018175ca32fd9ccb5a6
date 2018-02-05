@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    xmlns:nr_keyw="http://www.ftn.uns.ac.rs/naucni_radovi/keywords"
+    targetNamespace="http://www.ftn.uns.ac.rs/naucni_radovi/keywords">
+    
+    <xs:element name="keywords">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element type="xs:string" name="keyword" minOccurs="4" maxOccurs="6"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+</xs:schema>

@@ -1,0 +1,47 @@
+package com.objava.naucnih.radova.configuration;
+
+import java.util.HashMap;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.env.Environment;
+
+import com.marklogic.client.DatabaseClient;
+import com.marklogic.client.DatabaseClientFactory;
+import com.marklogic.client.DatabaseClientFactory.Authentication;
+
+@Configuration
+public class ClientConfig extends HashMap<String, DatabaseClient>{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	/**
+	 * Provided by Spring at startup, for accessing environment-specific variables.
+	 */
+	private Environment env;
+	
+	ClientConfig(Environment env) {
+		super();
+		this.env = env;
+		DatabaseClient client = databaseClient();
+		put("admin", client);
+	}
+	
+	/**
+	 * Constructs a Java Client API database Client, of which
+	 * this application uses two long-lived instances.
+	 * @param role The security role for whom whom to construct a connection
+	 * @return A DatabaseClient for accessing MarkLogic 
+	 */
+	private DatabaseClient databaseClient() {
+		String host = env.getProperty(MarkLogicConfig.host);
+		Integer port = MarkLogicConfig.port;
+		String username = env.getProperty(MarkLogicConfig.admin);
+		String password = env.getProperty(MarkLogicConfig.password);
+		return DatabaseClientFactory.newClient(host, port, username, password,
+				Authentication.DIGEST);
+	}
+	
+}

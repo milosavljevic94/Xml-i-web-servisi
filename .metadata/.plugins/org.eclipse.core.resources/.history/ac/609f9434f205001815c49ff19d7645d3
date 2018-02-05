@@ -1,0 +1,37 @@
+package com.objava.naucnih.radova.configuration;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+
+public class BasicConfig {
+
+	/**
+     * Has to be static so that Spring instantiates it first.
+     */
+    @Bean
+    public static PropertySourcesPlaceholderConfigurer propertyConfigurer() {
+        PropertySourcesPlaceholderConfigurer c = new PropertySourcesPlaceholderConfigurer();
+        c.setIgnoreResourceNotFound(true);
+        return c;
+    }
+
+    @Bean
+    public DatabaseClientConfig databaseClientConfig() {
+        return new DatabaseClientConfig(MarkLogicConfig.host, MarkLogicConfig.port, 
+        		MarkLogicConfig.admin, 
+        		MarkLogicConfig.password);
+    }
+
+    /**
+     * Used for building an XccTemplate; can be overridden when this method's assumption about the name isn't true.
+     */
+    protected String buildContentDatabaseName(String mlAppName) {
+        return mlAppName + "-content";
+    }
+
+    @Bean
+    public DatabaseClientProvider databaseClientProvider() {
+        return new SimpleDatabaseClientProvider(databaseClientConfig());
+    }
+    
+}

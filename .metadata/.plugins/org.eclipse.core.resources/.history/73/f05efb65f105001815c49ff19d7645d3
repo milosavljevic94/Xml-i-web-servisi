@@ -1,0 +1,30 @@
+package com.objava.naucnih.radova.configuration;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+
+import com.marklogic.client.DatabaseClient;
+import com.marklogic.client.DatabaseClientFactory;
+
+@Configuration
+public class MarkLogicClientConfig {
+	
+	/**
+     * Has to be static so that Spring instantiates it first.
+     */
+    @Bean
+    public static PropertySourcesPlaceholderConfigurer propertyConfigurer() {
+        PropertySourcesPlaceholderConfigurer c = new PropertySourcesPlaceholderConfigurer();
+        c.setIgnoreResourceNotFound(true);
+        return c;
+    }
+    
+	@Bean
+    public DatabaseClientConfig  databaseClientConfig()() {
+        DatabaseClient client = DatabaseClientFactory.newClient(MarkLogicConfig.host,
+				MarkLogicConfig.port, MarkLogicConfig.admin,
+				MarkLogicConfig.password, MarkLogicConfig.authType);
+        return new MarkLogicTemplate(client);
+    }
+}

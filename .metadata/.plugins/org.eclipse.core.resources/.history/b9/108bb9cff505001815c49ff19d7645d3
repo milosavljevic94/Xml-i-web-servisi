@@ -1,0 +1,24 @@
+package com.objava.naucnih.radova;
+
+import java.io.FileNotFoundException;
+
+import javax.xml.bind.JAXBException;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.objava.naucnih.radova.configuration.ClientConfig;
+
+@SpringBootApplication
+public class ObjavaNaucnihRadovaApplication {
+
+	private static final String BOOKSTORE_XML = "./naucni_radovi/";
+	
+	@Autowired
+	private ClientConfig clientConfig;
+	
+	public static void main(String[] args) throws JAXBException, FileNotFoundException {
+		SpringApplication.run(ObjavaNaucnihRadovaApplication.class, args);
+	}
+}

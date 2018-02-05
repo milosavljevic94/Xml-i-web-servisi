@@ -1,0 +1,13 @@
+package com.objava.naucnih.radova.model;
+
+public class Korisnik {
+	@Id
+	private Long id;
+	private String name;
+	
+	private String username;
+	
+	private String password;
+	
+	private List<String> roles = new ArrayList<>();
+}

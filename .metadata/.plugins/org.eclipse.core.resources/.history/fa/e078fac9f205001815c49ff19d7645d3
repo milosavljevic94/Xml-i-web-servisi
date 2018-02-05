@@ -1,0 +1,7 @@
+package com.objava.naucnih.radova.configuration;
+
+public interface DatabaseClientProvider {
+
+	public DatabaseClient getDatabaseClient();
+	
+}

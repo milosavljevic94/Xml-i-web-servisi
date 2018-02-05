@@ -1,0 +1,37 @@
+package com.objava.naucnih.radova.configuration;
+
+import org.springframework.core.env.Environment;
+
+import com.marklogic.client.DatabaseClient;
+import com.marklogic.client.DatabaseClientFactory;
+import com.marklogic.client.DatabaseClientFactory.Authentication;
+
+public class ClientConfig {
+
+	/**
+	 * Provided by Spring at startup, for accessing environment-specific variables.
+	 */
+	private Environment env;
+	
+	ClientConfig(Environment env) {
+		super();
+		this.env = env;
+		DatabaseClient client = databaseClient("admin");
+	}
+	
+	/**
+	 * Constructs a Java Client API database Client, of which
+	 * this application uses two long-lived instances.
+	 * @param role The security role for whom whom to construct a connection
+	 * @return A DatabaseClient for accessing MarkLogic 
+	 */
+	private DatabaseClient databaseClient(ClientRole role) {
+		String host = env.getProperty("marklogic.rest.host");
+		Integer port = Integer.parseInt(env.getProperty("marklogic.rest.port"));
+		String username = env.getProperty(role.getUserParam());
+		String password = env.getProperty(role.getPasswordParam());
+		return DatabaseClientFactory.newClient(host, port, username, password,
+				Authentication.DIGEST);
+	}
+	
+}
