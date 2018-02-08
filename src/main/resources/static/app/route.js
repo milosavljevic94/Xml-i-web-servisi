@@ -11,6 +11,24 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider) {
 				controller : 'NavController'
 			}
 		}
+	}).state('autorHome', {
+		parent : 'nav',
+		url : '/autorHome',
+		views : {
+			'content@' : {
+				templateUrl : 'app/views/autorHome.html',
+				controller : 'AutorController',
+			}
+		}
+	}).state('home', {
+		parent : 'nav',
+		url : '/',
+		views : {
+			'content@' : {
+				templateUrl : 'app/views/home.html',
+				controller : 'HomeController'
+			}
+		}
 	}).state('login', {
 		parent : 'nav',
 		url : '/login',

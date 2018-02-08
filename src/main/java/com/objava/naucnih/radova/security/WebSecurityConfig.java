@@ -27,7 +27,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 		web.ignoring()
 				// ignoring the "/", "/index.html", "/app/**", "/register",
 				// "/favicon.ico"
-				.antMatchers("/", "/index.html", "/app/**", "/api/**", "/register", "/login", "/authenticate", "/favicon.ico");
+				.antMatchers("/", "/xonomy.js", "/index.html", "/app/**", "/api/**", "/register", "/login", "/authenticate", "/favicon.ico");
 	}
 
 	// This method is used for override HttpSecurity of the web Application.

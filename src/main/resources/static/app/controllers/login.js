@@ -24,7 +24,7 @@ angular.module('app')
 				AuthService.userRole = res.user.roles;
 				$rootScope.$broadcast('LoginSuccessful');
 				// go to home page for the logged in user
-//				$state.go('home');
+				$state.go('home');
 			} else {
 				// if the token is not present in the response then the
 				// authentication was not successful. Setting the error message.
