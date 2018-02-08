@@ -1,9 +1,0 @@
-package com.objava.naucnih.radova.configuration;
-
-import com.marklogic.client.DatabaseClient;
-
-public interface DatabaseClientProvider {
-
-	public DatabaseClient getDatabaseClient();
-	
-}
