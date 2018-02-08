@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    elementFormDefault="qualified"
+    xmlns:nr_cp="http://www.ftn.uns.ac.rs/naucni_radovi/korisnik"
+    targetNamespace="http://www.ftn.uns.ac.rs/naucni_radovi/korisnik">
+    
+    <xs:element name="korisnik">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ime" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+                <xs:element name="prezime" type="xs:string" maxOccurs="1" minOccurs="0"></xs:element>
+                <xs:element name="username" type="xs:string" maxOccurs="1" minOccurs="1"></xs:element>
+                <xs:element name="password" type="xs:string" maxOccurs="1" minOccurs="1"></xs:element>
+                <xs:element name="roles">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="role" type="xs:string" maxOccurs="1" minOccurs="1"></xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+</xs:schema>
