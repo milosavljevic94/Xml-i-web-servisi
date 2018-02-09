@@ -1,7 +1,7 @@
 //
 // Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.8-b130911.1802 generiert 
 // Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// Änderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
+// ï¿½nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
 // Generiert: 2018.02.05 um 09:12:30 AM CET 
 //
 
@@ -20,7 +20,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java-Klasse für anonymous complex type.
+ * <p>Java-Klasse fï¿½r anonymous complex type.
  * 
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
  * 
@@ -160,10 +160,20 @@ public class CoverPage {
         }
         return this.author;
     }
+    
+    
 
 
-    /**
-     * <p>Java-Klasse für anonymous complex type.
+    @Override
+	public String toString() {
+		return "CoverPage [title=" + title + ", revisionVersion=" + revisionVersion + ", author=" + author + "]";
+	}
+
+
+
+
+	/**
+     * <p>Java-Klasse fï¿½r anonymous complex type.
      * 
      * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
      * 
@@ -401,9 +411,17 @@ public class CoverPage {
             return this.orcid;
         }
 
+        
+        @Override
+		public String toString() {
+			return "Author [firstName=" + firstName + ", lastName=" + lastName + ", affiliation=" + affiliation
+					+ ", authorAddress=" + authorAddress + ", email=" + email + ", phoneNumber=" + phoneNumber
+					+ ", orcid=" + orcid + "]";
+		}
 
-        /**
-         * <p>Java-Klasse für anonymous complex type.
+
+		/**
+         * <p>Java-Klasse fï¿½r anonymous complex type.
          * 
          * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
          * 
@@ -443,7 +461,14 @@ public class CoverPage {
             @XmlElement(required = true)
             protected String country;
 
-            /**
+            
+            @Override
+			public String toString() {
+				return "AuthorAddress [street=" + street + ", streetNumber=" + streetNumber + ", city=" + city
+						+ ", country=" + country + "]";
+			}
+
+			/**
              * Ruft den Wert der street-Eigenschaft ab.
              * 
              * @return

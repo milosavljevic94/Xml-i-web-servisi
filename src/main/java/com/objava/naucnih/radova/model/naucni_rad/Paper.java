@@ -1,7 +1,7 @@
 //
 // Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.8-b130911.1802 generiert 
 // Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// Änderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
+// ï¿½nderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
 // Generiert: 2018.02.05 um 09:12:30 AM CET 
 //
 
@@ -18,7 +18,7 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java-Klasse für anonymous complex type.
+ * <p>Java-Klasse fï¿½r anonymous complex type.
  * 
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
  * 
@@ -81,7 +81,13 @@ public class Paper {
     @XmlElement(name = "primary_header", namespace = "http://www.ftn.uns.ac.rs/naucni_radovi/paper_text", required = true)
     protected Paper.PrimaryHeader primaryHeader;
 
-    /**
+    
+    @Override
+	public String toString() {
+		return "Paper [primaryHeader=" + primaryHeader + "]";
+	}
+
+	/**
      * Ruft den Wert der primaryHeader-Eigenschaft ab.
      * 
      * @return
@@ -107,7 +113,7 @@ public class Paper {
 
 
     /**
-     * <p>Java-Klasse für anonymous complex type.
+     * <p>Java-Klasse fï¿½r anonymous complex type.
      * 
      * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
      * 
@@ -165,7 +171,14 @@ public class Paper {
         @XmlElement(name = "secondary_header", namespace = "http://www.ftn.uns.ac.rs/naucni_radovi/paper_text")
         protected List<Paper.PrimaryHeader.SecondaryHeader> secondaryHeader;
 
-        /**
+        
+        @Override
+		public String toString() {
+			return "PrimaryHeader [primaryHeaderTitle=" + primaryHeaderTitle + ", primaryHeaderText="
+					+ primaryHeaderText + ", secondaryHeader=" + secondaryHeader + "]";
+		}
+
+		/**
          * Ruft den Wert der primaryHeaderTitle-Eigenschaft ab.
          * 
          * @return
@@ -244,7 +257,7 @@ public class Paper {
 
 
         /**
-         * <p>Java-Klasse für anonymous complex type.
+         * <p>Java-Klasse fï¿½r anonymous complex type.
          * 
          * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
          * 
@@ -369,7 +382,7 @@ public class Paper {
 
 
             /**
-             * <p>Java-Klasse für anonymous complex type.
+             * <p>Java-Klasse fï¿½r anonymous complex type.
              * 
              * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
              * 
