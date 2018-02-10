@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<review xmlns="http://www.ftn.uns.ac.rs/naucni_radovi/reviews">
+    <title>
+        <typeOfReview>Recenzija naucnog rada</typeOfReview>
+        <manuscript_title>Rad broj 1</manuscript_title>
+        <revision_recommend>Accept</revision_recommend>
+    </title>
+    <info>
+        <reviewAutor>Recenzent Mirkovic</reviewAutor>
+        <manuscriptAutor>Autor Peric</manuscriptAutor>
+        <review_score>5.0</review_score>
+    </info>
+    <reviewPart>
+        <partTitle>Introduction</partTitle>
+        <partText>Text of intro of some manuscript.</partText>
+        <partScore>4.9</partScore>
+    </reviewPart>
+</review>
