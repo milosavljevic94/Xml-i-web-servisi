@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns5:nr_def xmlns="http://www.ftn.uns.ac.rs/naucni_radovi/naslovna" xmlns:ns2="http://www.ftn.uns.ac.rs/naucni_radovi/abstract" xmlns:ns3="http://www.ftn.uns.ac.rs/naucni_radovi/keywords" xmlns:ns4="http://www.ftn.uns.ac.rs/naucni_radovi/paper_text" xmlns:ns5="http://www.ftn.uns.ac.rs/naucni_rad">
+    <cover_page>
+        <title xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">aaa</title>
+        <author>
+            <first_name>aaa</first_name>
+            <last_name>aa</last_name>
+            <affiliation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">a</affiliation>
+            <author_address>
+                <street>aaaa</street>
+                <street_number>32</street_number>
+                <city>aa</city>
+                <country>aa</country>
+            </author_address>
+            <email>aa</email>
+            <phone_number>aa</phone_number>
+            <ORCID>123332</ORCID>
+        </author>
+    </cover_page>
+    <ns2:abstract_text>aa</ns2:abstract_text>
+    <ns3:keywords>
+        <ns3:keyword>rec1</ns3:keyword>
+        <ns3:keyword> rec2</ns3:keyword>
+    </ns3:keywords>
+    <ns4:paper>
+        <ns4:primary_header>
+            <ns4:primary_header_title>fdsa</ns4:primary_header_title>
+            <ns4:primary_header_text>fdsa</ns4:primary_header_text>
+        </ns4:primary_header>
+    </ns4:paper>
+</ns5:nr_def>

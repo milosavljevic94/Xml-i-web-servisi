@@ -49,13 +49,13 @@ angular.module('app')
 		$scope.nrDef.paper = $scope.paper;*/
 		$scope.autor.orcid = [$scope.orcid2];
 		$scope.keywords2 = $scope.keywords.split(',');
-		$scope.nrDef.keywords = [];
+		$scope.nrDef.keywords = {};
+		$scope.nrDef.keywords.keyword = [];
 		var listaKeywords = [];
 		for(var i=0; i<$scope.keywords2.length; i++) {
 			listaKeywords[i] = $scope.keywords2[i];
 		}
-		$scope.nrDef.keywords = listaKeywords;
-		
+		$scope.nrDef.keywords.keyword = listaKeywords;
 		$scope.autor.authorAddress = $scope.autorAdresa;
 		$scope.coverPage.author = [$scope.autor];
 		$scope.nrDef.coverPage = $scope.coverPage;
