@@ -1,69 +1,113 @@
 <h2>Dobro dosli: {{korisnik.ime}} {{korisnik.prezime}}</h2>
-<div>
-	<form ng-submit=addNaucniRad()>
-		<div>
-			<label>Naziv rada</label>
-			<input type="text" ng-model="coverPage.title"/>
+<div class="row">
+	<div class="col-sm-6">
+		<form ng-submit=submit()>
+			<div>
+				<label>Naziv rada</label>
+				<input ng-disabled="disabledTittle" type="text" ng-model="coverPage.title"/>
+			</div>
+			<div>
+				<label>Ime autora</label>
+				<input type="text" ng-model="autor.firstName"/>
+			</div>
+			<div>
+				<label>Prezime autora</label>
+				<input type="text" ng-model="autor.lastName"/>
+			</div>
+			<div>
+				<label>Affiliation</label>
+				<input type="text" ng-model="autor.affiliation"/>
+			</div>
+			<div>
+				<label>Email</label>
+				<input type="text" ng-model="autor.email"/>
+			</div>
+			<div>
+				<label>Broj telefona</label>
+				<input type="text" ng-model="autor.phoneNumber"/>
+			</div>
+			<div>
+				<label>ORCID</label>
+				<input type="number" ng-model="orcid2"/>
+			</div>
+			<div>
+				<label>Ulica autora</label>
+				<input type="text" ng-model="autorAdresa.street"/>
+			</div>
+			<div>
+				<label>Broj ulice</label>
+				<input type="text" ng-model="autorAdresa.streetNumber"/>
+			</div>
+			<div>
+				<label>Grad</label>
+				<input type="text" ng-model="autorAdresa.city"/>
+			</div>
+			<div>
+				<label>Drzava</label>
+				<input type="text" ng-model="autorAdresa.country"/>
+			</div>
+			<div>
+				<label>Abstract</label>
+				<input type="text" ng-model="nrDef.abstractText"/>
+			</div>
+			<div>
+				<label>Kljucne reci (Odvojiti zarezom)</label>
+				<input type="text" ng-model="keywords"/>
+			</div>
+			<div>
+				<label>Naziv headera</label>
+				<input type="text" ng-model="PrimaryHeader.primaryHeaderTitle"/>
+			</div>
+			<div>
+				<label>Header text</label>
+				<input type="text" ng-model="PrimaryHeader.primaryHeaderText"/>
+			</div>
+			<button type="submit" class="btn btn-default">{{buttonText}}</button>
+				
+			<div class="alert alert-info margin-top-5" ng-show="message">{{message}}</div>
+		</form>
+	</div>
+
+	<div class="col-sm-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					Vasi radovi
+					<button type="button" class="btn btn-default btn-sm"
+						ng-click="initAddRad()">
+						<span class="glyphicon glyphicon-plus"></span> Novi Rad
+					</button>
+				</div>
+				<div class="panel-body">
+	
+					<div class="alert alert-info margin-top-5" ng-show="deleteMessage">{{deleteMessage}}</div>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>Title</th>
+								<th></th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="rad in radovi">
+								<td>{{$index+1}}</td>
+								<td>{{rad.coverPage.title}}</td>
+								<td><button type="button" class="btn btn-default btn-sm"
+										ng-click="initEdit(rad)">
+										<span class="glyphicon glyphicon-edit"></span>
+									</button></td>
+								<td>
+									<button type="button" class="btn btn-default btn-sm"
+										ng-click="deleteRad(rad)">
+										<span class="glyphicon glyphicon-trash"></span>
+									</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
 		</div>
-		<div>
-			<label>Ime autora</label>
-			<input type="text" ng-model="autor.firstName"/>
-		</div>
-		<div>
-			<label>Prezime autora</label>
-			<input type="text" ng-model="autor.lastName"/>
-		</div>
-		<div>
-			<label>Affiliation</label>
-			<input type="text" ng-model="autor.affiliation"/>
-		</div>
-		<div>
-			<label>Email</label>
-			<input type="text" ng-model="autor.email"/>
-		</div>
-		<div>
-			<label>Broj telefona</label>
-			<input type="text" ng-model="autor.phoneNumber"/>
-		</div>
-		<div>
-			<label>ORCID</label>
-			<input type="number" ng-model="orcid2"/>
-		</div>
-		<div>
-			<label>Ulica autora</label>
-			<input type="text" ng-model="autorAdresa.street"/>
-		</div>
-		<div>
-			<label>Broj ulice</label>
-			<input type="text" ng-model="autorAdresa.streetNumber"/>
-		</div>
-		<div>
-			<label>Grad</label>
-			<input type="text" ng-model="autorAdresa.city"/>
-		</div>
-		<div>
-			<label>Drzava</label>
-			<input type="text" ng-model="autorAdresa.country"/>
-		</div>
-		<div>
-			<label>Abstract</label>
-			<input type="text" ng-model="nrDef.abstractText"/>
-		</div>
-		<div>
-			<label>Kljucne reci (Odvojiti zarezom)</label>
-			<input type="text" ng-model="keywords"/>
-		</div>
-		<div>
-			<label>Naziv headera</label>
-			<input type="text" ng-model="PrimaryHeader.primaryHeaderTitle"/>
-		</div>
-		<div>
-			<label>Header text</label>
-			<input type="text" ng-model="PrimaryHeader.primaryHeaderText"/>
-		</div>
-		<button type="submit" class="btn btn-default"
-			ng-disabled="buildingForm.$invalid">Dodaj rad</button>
-			
-		<div class="alert alert-info margin-top-5" ng-show="message">{{message}}</div>
-	</form>
+	</div>
 </div>

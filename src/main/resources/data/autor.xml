@@ -4,6 +4,7 @@
     <prezime>Autoric</prezime>
     <username>autor</username>
     <password>lozinka</password>
+    <orcid>123456</orcid>
     <roles>
         <role>Autor</role>
     </roles>
