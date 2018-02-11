@@ -38,6 +38,15 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider) {
 				controller : 'LoginController'
 			}
 		}
+	}).state('register', {
+		parent : 'nav',
+		url : '/register',
+		views : {
+			'content@' : {
+				templateUrl : 'app/views/register.html'
+				//controller : 'RegisterController'
+			}
+		}
 	}).state('page-not-found', {
 		parent : 'nav',
 		url : '/page-not-found',

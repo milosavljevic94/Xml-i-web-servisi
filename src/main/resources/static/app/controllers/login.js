@@ -1,10 +1,9 @@
-angular.module('app')
 // Creating the Angular Controller
-.controller('LoginController', function($http, $scope, $state, AuthService, $rootScope) {
+app.controller('LoginController', function($http, $scope, $state, AuthService, $rootScope) {
 	
-	$scope.goToRegistration = function() {
+	/*$scope.goToRegistration = function() {
 		$state.go('register');
-	}
+	}*/
 	
 	// method for login
 	$scope.login = function() {

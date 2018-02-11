@@ -97,8 +97,18 @@ public class KorisnikController {
 		}
 	}
 	
-	@RequestMapping(value = "/add/korisnik/{username}", method = RequestMethod.POST)
-	public String addKorisnik(@RequestBody Korisnik k, @PathVariable String username) throws JAXBException, FileNotFoundException{
+	@RequestMapping(value = "/add/korisnik", method = RequestMethod.POST)
+	public String addKorisnik(@RequestParam String ime, @RequestParam String prezime, @RequestParam String username, @RequestParam String password, @RequestParam String orcid, @RequestParam String role) throws JAXBException, FileNotFoundException{
+		
+		Korisnik.Roles roles = new Korisnik.Roles();
+		roles.setRole(role);
+		Korisnik k = new Korisnik();
+		k.setIme(ime);
+		k.setPrezime(prezime);
+		k.setUsername(username);
+		k.setPassword(password);
+		k.setOrcid(orcid);
+		k.setRoles(roles);
 		
 		System.out.println(k.toString());
 		
@@ -118,15 +128,15 @@ public class KorisnikController {
         else {
     	    m.marshal(k, f);
         }
+        
+		// acquire the content
+		InputStream docStream = ObjavaNaucnihRadovaApplication.class.getClassLoader().getResourceAsStream(
+				"data/korisnici/" + k.getUsername() + ".xml");
 	        
 //	    // create the client
 		DatabaseClient client = DatabaseClientFactory.newClient(MarkLogicConfig.host,
 				MarkLogicConfig.port, MarkLogicConfig.admin,
 				MarkLogicConfig.password, MarkLogicConfig.authType);
-		
-		// acquire the content
-		InputStream docStream = ObjavaNaucnihRadovaApplication.class.getClassLoader().getResourceAsStream(
-				"data/korisnici/" + k.getUsername() + ".xml");
 
 		// create a manager for XML documents
 		XMLDocumentManager docMgr = client.newXMLDocumentManager();
@@ -137,6 +147,9 @@ public class KorisnikController {
 		// write the document content
 		docMgr.write("http://localhost:8011/korisnici/" + k.getUsername()+".xml", handle);
         
+		
+		
+		
 //        release the client
 		client.release();
 		

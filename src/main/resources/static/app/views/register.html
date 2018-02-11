@@ -2,13 +2,13 @@
 	<form name="registerForm" action="/">
 		<table border="1" cellpadding="5">
 			<div>
-				<tr><td>Username: </td><td><input type="text" id="username" ng-model="korisnik.username" required></td></tr>
-				<tr><td>Password: </td><td><input type="password" id="password" ng-model="korisnik.password" required></td></tr>
+				<tr><td>Username: </td><td><input type="text" id="username1" ng-model="korisnik.username" required></td></tr>
+				<tr><td>Password: </td><td><input type="password" id="password1" ng-model="korisnik.password" required></td></tr>
 				<tr><td>Ime: </td><td><input type="text" id="ime" ng-model="korisnik.ime" required></td></tr>
 				<tr><td>Prezime: </td><td><input type="text" id="prezime" ng-model="korisnik.prezime" required></td></tr>
-				<tr><td>ORCID: </td><td><input type="number" id="orcid" ng-model=korisnik.orcid" required></td></tr>
+				<tr><td>ORCID: </td><td><input type="text" id="orcid" ng-model="korisnik.orcid" required></td></tr>
 				<tr><td>Uloga:</td><td>
-				<select id="roles" ng-model="roles.role">
+				<select id="roles" ng-model="korisnik.role">
 					<option value="autor">autor</option>
 					<option value="recezent">recezent</option>
 					<option value="urednik">urednik</option>

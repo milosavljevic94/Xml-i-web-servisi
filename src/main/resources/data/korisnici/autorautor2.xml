@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<korisnik xmlns="http://www.ftn.uns.ac.rs/naucni_radovi/korisnik">
+    <ime>Autor2</ime>
+    <prezime>Autor2</prezime>
+    <username>autor2</username>
+    <password>autor2</password>
+    <orcid>123</orcid>
+</korisnik>

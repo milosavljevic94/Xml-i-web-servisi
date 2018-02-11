@@ -1,5 +1,5 @@
 // Creating angular app with module name "app"
-angular.module('app', [ 'ui.router' ])
+var app = angular.module('app', [ 'ui.router' ])
 
 // the following method will run at the time of initializing the module. That
 // means it will run only one time.
