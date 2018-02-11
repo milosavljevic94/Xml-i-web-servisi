@@ -1,6 +1,11 @@
 angular.module('app')
 // Creating the Angular Controller
 .controller('LoginController', function($http, $scope, $state, AuthService, $rootScope) {
+	
+	$scope.goToRegistration = function() {
+		$state.go('register');
+	}
+	
 	// method for login
 	$scope.login = function() {
 		// requesting the token by usename and passoword

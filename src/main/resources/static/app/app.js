@@ -1,7 +1,6 @@
 // Creating angular app with module name "app"
 angular.module('app', [ 'ui.router' ])
- 
- 
+
 // the following method will run at the time of initializing the module. That
 // means it will run only one time.
 .run(function(AuthService, $rootScope, $state) {
@@ -10,6 +9,9 @@ angular.module('app', [ 'ui.router' ])
 	// the '$stateChangeStart'.
 	$rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
 		// checking the user is logged in or not
+		/*if (toState.name==='register') {
+			
+		}*/
 		if (!AuthService.user) {
 			// To avoiding the infinite looping of state change we have to add a
 			// if condition.
