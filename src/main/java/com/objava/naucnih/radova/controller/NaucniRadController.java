@@ -69,7 +69,7 @@ public class NaucniRadController {
         for (DocumentRecord document: documents) {
             System.out.println(document.getUri());
             // ne zelimo da procitamo korisnika vec samo njegove radove
-            if(document.getUri().contains("http://localhost:8011/korisnici/autor/")){
+            if(document.getUri().contains("http://localhost:8011/korisnici/")){
             	break;
             }
             docMgr.read(document.getUri(), handle);
@@ -162,7 +162,7 @@ public class NaucniRadController {
         for (DocumentRecord document: documents) {
             System.out.println(document.getUri());
          // ne zelimo da procitamo korisnika vec samo njegove radove
-            if(document.getUri().contains("http://localhost:8011/korisnici/autor/")){
+            if(document.getUri().contains("http://localhost:8011/korisnici/")){
             	break;
             }
             docMgr.read(document.getUri(), handle);
@@ -240,7 +240,7 @@ public class NaucniRadController {
         for (DocumentRecord document: documents) {
             System.out.println(document.getUri());
          // ne zelimo da procitamo korisnika vec samo njegove radove
-            if(document.getUri().contains("http://localhost:8011/korisnici/autor/")){
+            if(document.getUri().contains("http://localhost:8011/korisnici/")){
             	break;
             }
             docMgr.read(document.getUri(), handle1);
@@ -316,7 +316,7 @@ public class NaucniRadController {
         for (DocumentRecord document: documents) {
             System.out.println(document.getUri());
          // ne zelimo da procitamo korisnika vec samo njegove radove
-            if(document.getUri().contains("http://localhost:8011/korisnici/autor/")){
+            if(document.getUri().contains("http://localhost:8011/korisnici/")){
             	break;
             }
             docMgr.read(document.getUri(), handle1);
