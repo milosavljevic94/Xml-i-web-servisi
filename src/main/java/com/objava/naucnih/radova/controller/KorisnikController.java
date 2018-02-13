@@ -126,7 +126,7 @@ public class KorisnikController {
             return "Username already taken.";
         }
         else {
-    	    m.marshal(k, f);
+    	    m.marshal(k, new File("src/main/resources/data/korisnici/" + k.getUsername() + ".xml"));
         }
         
 		// acquire the content
@@ -145,7 +145,7 @@ public class KorisnikController {
 		InputStreamHandle handle = new InputStreamHandle(docStream);
 		
 		// write the document content
-		docMgr.write("http://localhost:8011/korisnici/" + k.getUsername()+".xml", handle);
+		docMgr.write("http://localhost:8011/korisnici/autor/" + k.getUsername()+".xml", handle);
         
 		
 		

@@ -8,4 +8,7 @@ angular.module('app')
 	}else if(userRole.indexOf("Upravnik") > -1){
 		$state.go("upravnikHome");
 	}
+	else if(userRole.indexOf("urednik") > -1) {
+		$state.go("urednikHome");
+	}
 });

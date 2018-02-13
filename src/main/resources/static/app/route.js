@@ -20,6 +20,15 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider) {
 				controller : 'AutorController',
 			}
 		}
+	}).state('urednikHome', {
+		parent : 'nav',
+		url : '/urednikHome',
+		views : {
+			'content@' : {
+				templateUrl : 'app/views/urednikHome.html',
+				controller : 'UrednikController',
+			}
+		}
 	}).state('home', {
 		parent : 'nav',
 		url : '/',

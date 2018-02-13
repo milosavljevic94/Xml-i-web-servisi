@@ -1,0 +1,20 @@
+<div  ng-controller="UrednikController">
+			<table border="1">
+				<thead>
+					<tr>
+						<td align="center"><a href="#/urednikHome" ng-click="sortType = 'rad.coverPage.title'; sortReverse = !sortReverse;">Title</a></td>
+					</tr>
+				</thead>
+				<tbody>
+				  	<tr ng-repeat="rad in radovi">
+						<td align="center">{{rad.coverPage.title}}</td>
+				  		<!--<td align="center"><button type="button" class='btn btn-default' ng-click="detailView(rad)">Details</button></td>-->
+					</tr>
+					<tr>
+						<!--<td><input type="text" id="pretragaRadova" ng-model="search"></td>
+						 | orderBy:sortType:sortReverse | filter:{ coverPage.title : search }-->
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+</div>
