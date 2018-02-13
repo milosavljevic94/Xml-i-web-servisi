@@ -153,14 +153,14 @@ angular.module('app')
 		$scope.paper.primaryHeader = $scope.PrimaryHeader;
 		$scope.nrDef.paper = $scope.paper;
 		
-		alert($scope.korisnik.orcid);
 		$http({ 
 		    method: 'POST',
 		    url: 'api/add/nr/' + $scope.korisnik.orcid,
 		    data: $scope.nrDef
+		}).success(function(red){
+			init();
 		}).error(function(error) {
 			$scope.message = error.message;
 		});
-        
 	};
 });

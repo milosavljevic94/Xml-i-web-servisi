@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ns5:nr_def xmlns="http://www.ftn.uns.ac.rs/naucni_radovi/naslovna" xmlns:ns2="http://www.ftn.uns.ac.rs/naucni_radovi/abstract" xmlns:ns3="http://www.ftn.uns.ac.rs/naucni_radovi/keywords" xmlns:ns4="http://www.ftn.uns.ac.rs/naucni_radovi/paper_text" xmlns:ns5="http://www.ftn.uns.ac.rs/naucni_rad">
     <cover_page>
-        <title xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">fdsa</title>
+        <title xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">bbbbbbbbbbb</title>
         <author>
-            <first_name>fdsa</first_name>
-            <last_name>fdas</last_name>
-            <affiliation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">fas</affiliation>
+            <first_name>dasf</first_name>
+            <last_name>dfasd</last_name>
+            <affiliation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">fsad</affiliation>
             <author_address>
-                <street>fsa</street>
+                <street>fas</street>
                 <street_number>21</street_number>
                 <city>fdsa</city>
                 <country>fdsa</country>
             </author_address>
             <email>fdsa</email>
-            <phone_number>fsda</phone_number>
+            <phone_number>fdsa</phone_number>
             <ORCID>555555</ORCID>
         </author>
     </cover_page>
     <ns2:abstract_text>fdsa</ns2:abstract_text>
     <ns3:keywords>
-        <ns3:keyword>rec1</ns3:keyword>
-        <ns3:keyword> rec2</ns3:keyword>
+        <ns3:keyword>fdsa</ns3:keyword>
     </ns3:keywords>
     <ns4:paper>
         <ns4:primary_header>

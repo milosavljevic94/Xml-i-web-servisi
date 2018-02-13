@@ -69,60 +69,16 @@ public class NaucniRadController {
         for (DocumentRecord document: documents) {
             System.out.println(document.getUri());
             // ne zelimo da procitamo korisnika vec samo njegove radove
-            if(document.getUri().contains("http://localhost:8011/korisnici/")){
-            	break;
+            if(!document.getUri().contains("http://localhost:8011/korisnici/")){
+	            
+	            docMgr.read(document.getUri(), handle);
+	    		
+	    		StringReader reader = new StringReader(handle.toString());
+	    		NrDef papre = (NrDef) jaxbUnmarshaller.unmarshal(reader);
+	    		
+	    		naucniRadovi.add(papre);
+	            // Do something with the content using document.getContent()
             }
-            docMgr.read(document.getUri(), handle);
-    		
-    		StringReader reader = new StringReader(handle.toString());
-    		NrDef papre = (NrDef) jaxbUnmarshaller.unmarshal(reader);
-    		
-    		naucniRadovi.add(papre);
-            // Do something with the content using document.getContent()
-        }
-
-//		release the client
-		client.release();
-		
-		return naucniRadovi;
-	}
-	
-	@RequestMapping(value = "/nr/getAll", method = RequestMethod.GET)
-	public List<NrDef> getAllNaucniRadovi() throws JAXBException{
-		
-		DatabaseClient client = DatabaseClientFactory.newClient(MarkLogicConfig.host,
-				MarkLogicConfig.port, MarkLogicConfig.admin,
-				MarkLogicConfig.password, MarkLogicConfig.authType);
-		
-		// create a manager for XML documents
-		XMLDocumentManager docMgr = client.newXMLDocumentManager();			
-		
-		QueryManager qm = client.newQueryManager();
-
-        // Build query
-		StringQueryDefinition query = 
-		        qm.newStringDefinition().withCriteria("aaa");
-        
-        // Perform the multi-document read and process results
-        DocumentPage documents = docMgr.search(query, 1);
-        /*System.out.println("Total matching documents (urednik): "
-            + documents.getTotalSize());*/
-        DOMHandle handle = new DOMHandle();
-        List<NrDef> naucniRadovi = new ArrayList<>();
-        
-        JAXBContext jaxbContext = JAXBContext.newInstance(NrDef.class);
-
-		Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-		
-        for (DocumentRecord document: documents) {
-            System.out.println(document.getUri());
-            docMgr.read(document.getUri(), handle);
-    		
-    		StringReader reader = new StringReader(handle.toString());
-    		NrDef papre = (NrDef) jaxbUnmarshaller.unmarshal(reader);
-    		
-    		naucniRadovi.add(papre);
-            // Do something with the content using document.getContent()
         }
 
 //		release the client
@@ -162,16 +118,16 @@ public class NaucniRadController {
         for (DocumentRecord document: documents) {
             System.out.println(document.getUri());
          // ne zelimo da procitamo korisnika vec samo njegove radove
-            if(document.getUri().contains("http://localhost:8011/korisnici/")){
-            	break;
+            if(!document.getUri().contains("http://localhost:8011/korisnici/")){
+            	
+	            docMgr.read(document.getUri(), handle);
+	    		
+	    		StringReader reader = new StringReader(handle.toString());
+	    		NrDef papre = (NrDef) jaxbUnmarshaller.unmarshal(reader);
+	    		
+	    		naucniRadovi.add(papre);
+	            // Do something with the content using document.getContent()
             }
-            docMgr.read(document.getUri(), handle);
-    		
-    		StringReader reader = new StringReader(handle.toString());
-    		NrDef papre = (NrDef) jaxbUnmarshaller.unmarshal(reader);
-    		
-    		naucniRadovi.add(papre);
-            // Do something with the content using document.getContent()
         }
         
 //        release the client
@@ -240,15 +196,15 @@ public class NaucniRadController {
         for (DocumentRecord document: documents) {
             System.out.println(document.getUri());
          // ne zelimo da procitamo korisnika vec samo njegove radove
-            if(document.getUri().contains("http://localhost:8011/korisnici/")){
-            	break;
+            if(!document.getUri().contains("http://localhost:8011/korisnici/")){
+            	
+	            docMgr.read(document.getUri(), handle1);
+	    		
+	    		StringReader reader = new StringReader(handle1.toString());
+	    		NrDef papre = (NrDef) jaxbUnmarshaller.unmarshal(reader);
+	    		
+	    		naucniRadovi.add(papre);
             }
-            docMgr.read(document.getUri(), handle1);
-    		
-    		StringReader reader = new StringReader(handle1.toString());
-    		NrDef papre = (NrDef) jaxbUnmarshaller.unmarshal(reader);
-    		
-    		naucniRadovi.add(papre);
         }
         
 //        release the client
@@ -316,15 +272,15 @@ public class NaucniRadController {
         for (DocumentRecord document: documents) {
             System.out.println(document.getUri());
          // ne zelimo da procitamo korisnika vec samo njegove radove
-            if(document.getUri().contains("http://localhost:8011/korisnici/")){
-            	break;
+            if(!document.getUri().contains("http://localhost:8011/korisnici/")){
+            	
+	            docMgr.read(document.getUri(), handle1);
+	    		
+	    		StringReader reader = new StringReader(handle1.toString());
+	    		NrDef papre = (NrDef) jaxbUnmarshaller.unmarshal(reader);
+	    		
+	    		naucniRadovi.add(papre);
             }
-            docMgr.read(document.getUri(), handle1);
-    		
-    		StringReader reader = new StringReader(handle1.toString());
-    		NrDef papre = (NrDef) jaxbUnmarshaller.unmarshal(reader);
-    		
-    		naucniRadovi.add(papre);
         }
         
 //        release the client

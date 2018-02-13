@@ -17,7 +17,7 @@
             <ORCID>555555</ORCID>
         </author>
     </cover_page>
-    <ns2:abstract_text>abstractttt</ns2:abstract_text>
+    <ns2:abstract_text>abstract</ns2:abstract_text>
     <ns3:keywords>
         <ns3:keyword>rec1</ns3:keyword>
         <ns3:keyword> rec2</ns3:keyword>

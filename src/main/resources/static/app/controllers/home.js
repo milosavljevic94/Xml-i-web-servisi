@@ -5,10 +5,10 @@ angular.module('app')
 	var userRole = AuthService.user.roles.role;
 	if(userRole.indexOf("Autor") > -1){
 		$state.go("autorHome");
-	}else if(userRole.indexOf("Upravnik") > -1){
-		$state.go("upravnikHome");
+	}else if(userRole.indexOf("Recenzent") > -1){
+		$state.go("autorHome");
 	}
-	else if(userRole.indexOf("urednik") > -1) {
+	else if(userRole.indexOf("Urednik") > -1) {
 		$state.go("urednikHome");
 	}
 });
