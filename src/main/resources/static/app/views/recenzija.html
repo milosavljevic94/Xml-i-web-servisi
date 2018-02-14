@@ -1,5 +1,6 @@
 <h1>Recenzija naucnog rada</h1>
-<div>
+<div class="row">
+<div  class="col-sm-6">
 	<form ng-submit=submit()>
 	
 	    <div align:"left">
@@ -102,4 +103,36 @@
 		
 		<input type="submit" value = "Dodaj recenziju"/>
 	</form>
+</div>
+
+<div class="col-sm-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					Vasi radovi
+					<button type="button" class="btn btn-default btn-sm"
+						ng-click="initAddRad()">
+						<span class="glyphicon glyphicon-plus"></span> Novi Rad
+					</button>
+				</div>
+				<div class="panel-body">
+	
+					<div class="alert alert-info margin-top-5" ng-show="deleteMessage">{{deleteMessage}}</div>
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>Title</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="r in recenzije">
+								<td>{{$index+1}}</td>
+								<td>{{r.title.typeOfReview}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

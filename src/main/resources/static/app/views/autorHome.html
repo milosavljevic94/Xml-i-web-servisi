@@ -181,6 +181,8 @@
 							<tr>
 								<th>#</th>
 								<th>Title</th>
+								<th>Recenzije</th>
+								<th>Propratna pismo</th>
 								<th></th>
 								<th></th>
 							</tr>
@@ -189,6 +191,14 @@
 							<tr ng-repeat="rad in radovi">
 								<td>{{$index+1}}</td>
 								<td>{{rad.coverPage.title}}</td>
+								<td><button type="button" class="btn btn-default btn-sm"
+										ng-click="vidi_recenzije(rad)">
+										<span class="glyphicon glyphicon-duplicate"></span>
+									</button></td></td>
+									<td><button type="button" class="btn btn-default btn-sm"
+										ng-click="vidi_cv(rad)">
+										<span class="glyphicon glyphicon-envelope"></span>
+									</button></td></td>
 								<td><button type="button" class="btn btn-default btn-sm"
 										ng-click="initEdit(rad)">
 										<span class="glyphicon glyphicon-edit"></span>

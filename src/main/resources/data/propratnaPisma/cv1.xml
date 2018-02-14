@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<cover_letter xmlns="http://www.ftn.uns.ac.rs/naucni_radovi/cover_letter">
+    <title_text xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">cv1</title_text>
+    <name xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">dasda dasd</name>
+    <name_of_university xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">dsada</name_of_university>
+    <university_address>
+        <street>dasd</street>
+        <street_number>12</street_number>
+        <city>dasdas</city>
+        <country>dasd</country>
+        <postal_number>33</postal_number>
+    </university_address>
+    <email>dasd</email>
+    <recipient>
+        <recipient_name>asd das</recipient_name>
+        <recipient_role>dasd</recipient_role>
+        <journal_name>d</journal_name>
+    </recipient>
+    <date>2018-02-14Z</date>
+    <letter_text>asd</letter_text>
+    <signature>
+        <name>asd asd</name>
+        <academic_degree>asda</academic_degree>
+        <department>asdd</department>
+        <university>das</university>
+    </signature>
+</cover_letter>

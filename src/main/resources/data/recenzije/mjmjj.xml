@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<review xmlns="http://www.ftn.uns.ac.rs/naucni_radovi/reviews">
+    <title>
+        <typeOfReview>mjmjj</typeOfReview>
+        <manuscript_title>aaaaa</manuscript_title>
+        <revision_recommend>dasd</revision_recommend>
+    </title>
+    <info>
+        <reviewAutor>dasd</reviewAutor>
+        <manuscriptAutor>dasd</manuscriptAutor>
+        <review_score>sdad</review_score>
+    </info>
+    <reviewPart>
+        <partTitle>dasd</partTitle>
+        <partText>dasd</partText>
+    </reviewPart>
+    <reviewPart>
+        <partTitle>dasd</partTitle>
+        <partText>dasd</partText>
+    </reviewPart>
+    <reviewPart>
+        <partTitle>dasd</partTitle>
+        <partText>dasd</partText>
+    </reviewPart>
+    <reviewPart>
+        <partTitle>dasd</partTitle>
+        <partText>dasd</partText>
+    </reviewPart>
+    <reviewPart>
+        <partTitle>dasd</partTitle>
+        <partText>dasd</partText>
+    </reviewPart>
+</review>

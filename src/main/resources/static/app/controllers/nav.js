@@ -4,7 +4,7 @@ angular.module('app')
 	
 	// Check if user has role admin
 	function checkOption(role, roles) {
-		if((roles).indexOf(role) != -1){
+		if(roles === role){
 			return true;
 		}else {
 			return false;
@@ -14,6 +14,7 @@ angular.module('app')
 	$scope.$on('LoginSuccessful', function() {
 		$scope.user = AuthService.user;
 		$scope.userAutor = checkOption("Autor", AuthService.user.roles.role);
+		$scope.userAutor = checkOption("Recenzent", AuthService.user.roles.role);
 		$scope.userUrednik = checkOption("Urednik", AuthService.user.roles.role);
 	});
 	$scope.$on('LogoutSuccessful', function() {

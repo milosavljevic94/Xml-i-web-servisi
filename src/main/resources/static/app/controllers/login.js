@@ -25,7 +25,9 @@ app.controller('LoginController', function($http, $scope, $state, AuthService, $
  
 				// setting the user in AuthService
 				AuthService.user = res.user;
-				AuthService.userRole = res.user.roles;
+				AuthService.user.role = res.user.roles.role;
+				
+				AuthService.userRole = res.user.roles.role;
 				$rootScope.$broadcast('LoginSuccessful');
 				// go to home page for the logged in user
 				$state.go('home');

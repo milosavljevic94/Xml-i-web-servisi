@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<review xmlns="http://www.ftn.uns.ac.rs/naucni_radovi/reviews">
+    <title>
+        <typeOfReview>recenzija12</typeOfReview>
+        <manuscript_title>rad3</manuscript_title>
+        <revision_recommend>dasdas</revision_recommend>
+    </title>
+    <info>
+        <reviewAutor>sad</reviewAutor>
+        <manuscriptAutor>dasd</manuscriptAutor>
+        <review_score>dasd</review_score>
+    </info>
+    <reviewPart>
+        <partTitle>dasd</partTitle>
+        <partText>dsada</partText>
+    </reviewPart>
+    <reviewPart>
+        <partTitle>dasd</partTitle>
+        <partText>dsada</partText>
+    </reviewPart>
+</review>

@@ -2,7 +2,7 @@ angular.module('app')
 
 // Creating the Angular Controller
 
-.controller('AutorController', function($http, $scope, AuthService) {
+.controller('AutorController', function($http, $scope, AuthService, $state) {
 	
 	$scope.korisnik = AuthService.user;
 	$scope.buttonText = "Dodaj";
@@ -84,7 +84,6 @@ angular.module('app')
 	$scope.radovi = [];
 	
 	var init = function(){
-		
 		$http.get('api/nr/' + $scope.korisnik.orcid).success(function(res){
 			$scope.radovi = res;
 			$scope.message='';
@@ -105,6 +104,16 @@ angular.module('app')
 			addNaucniRad();	
 		}
 	};
+	
+	 $scope.vidi_recenzije = function(rad){
+		AuthService.nr_title = rad.coverPage.title;
+		$state.go('recenzija');
+	}
+	 
+	 $scope.vidi_cv = function(rad){
+		AuthService.nr_title = rad.coverPage.title;
+		$state.go('recenzija');
+	 }
 	
 	var editRad = function(){
 		$scope.autor.orcid = [$scope.orcid2];

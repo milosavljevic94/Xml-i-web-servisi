@@ -3,13 +3,13 @@ angular.module('app')
 .controller('HomeController', function($http, $scope, AuthService, $state) {
 	$scope.user = AuthService.user;
 	var userRole = AuthService.user.roles.role;
-	if(userRole.indexOf("Autor") > -1){
+	if(userRole === "Autor"){
 		$state.go("autorHome");
 	}
-	else if(userRole.indexOf("Urednik") > -1) {
+	else if(userRole === "Urednik") {
 		$state.go("urednikHome");
 	}
-	else if(userRole.indexOf("Recenzent") > -1){
+	else if(userRole === "Recenzent"){
 		$state.go("autorHome");
 	}
 });

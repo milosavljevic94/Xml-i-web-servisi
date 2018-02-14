@@ -1,9 +1,15 @@
 angular.module('app')
 
-.controller('RecenzijaController', function($http, $scope){
+.controller('RecenzijaController', function($http, $scope, AuthService){
+	$scope.korisnik = AuthService.user;
+	$scope.recenzije = [];
 	
 	var init = function(){
-		alert("usao u init");
+		$http.get('api/recenzije/'+AuthService.nr_title).success(function(res){
+			$scope.recenzije = res;
+		}).error(function(err){
+			alert(JSON.stringify(err));
+		});
 		$scope.title = {};
 		$scope.title.typeOfReview;
 		$scope.title.manuscriptTitle;
@@ -71,8 +77,8 @@ angular.module('app')
 			$scope.recenzija.reviewPart.push($scope.reviewPart5);
 		}
 		
-		$http.post('api/addRecenziju/', $scope.recenzija).success(function(res){
-			alert(JSON.stringify(res));
+		$http.post('api/addRecenziju/' + $scope.korisnik.orcid, $scope.recenzija).success(function(res){
+			$scope.recenzije = res;
 		}).error(function(err){
 			alert(JSON.stringify(err));
 		});
