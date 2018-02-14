@@ -84,12 +84,15 @@ angular.module('app')
 	$scope.radovi = [];
 	
 	var init = function(){
+		
 		$http.get('api/nr/' + $scope.korisnik.orcid).success(function(res){
 			$scope.radovi = res;
 			$scope.message='';
 			$scope.buttonText = 'Dodaj';
+		}).success(function(res){
+	
 		}).error(function(error){
-			alert(JSON.stringify(error));
+			
 		});
 	};
 	
@@ -232,7 +235,7 @@ angular.module('app')
 		    method: 'POST',
 		    url: 'api/add/coverLetter/' + $scope.nazivNaucnogRadaZaCoverLetter + "/" + $scope.orcidZaCoverLetter,
 		    data: $scope.coverLetter
-		}).success(function(red){
+		}).success(function(res){
 			init();
 		}).error(function(error) {
 			$scope.message = error.message;

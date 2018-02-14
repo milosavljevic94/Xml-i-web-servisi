@@ -1,0 +1,105 @@
+<h1>Recenzija naucnog rada</h1>
+<div>
+	<form ng-submit=submit()>
+	
+	    <div align:"left">
+			<label>Recenzija: </label>
+			<input type="text"  value="Recenzija br 1 na rad:" ng-model = "title.typeOfReview"/></br>
+			</br>
+			<label>Rad za recenziranje: </label>
+			<input type="text"  value="" ng-model = "title.manuscriptTitle"/><br>
+			</br>
+		</div>
+		<div align:"left">
+			<label>Status rada: </label>
+			<input type="text"  value="Accept, Minor, Major" ng-model = "title.revisionRecommend"/><br>
+		</div>
+		</br>
+
+		<fieldset>
+			<legend>Informacije recenzije: </legend>
+			<div>
+				<label>Autor recenzije(recenzent): </label>
+				<input type="text"  value="" ng-model = "info.reviewAutor"/><br>
+			</div>
+			<div>
+				<label>Autor rada: </label>
+				<input type="text"  value="" ng-model = "info.manuscriptAutor"/><br>
+			</div>
+			<div>
+				<label>Ocena rada(score): </label>
+				<input type="text"  value="" ng-model = "info.reviewScore"/><br>
+			</div>
+		</fieldset>
+		
+		<p>Osnovni delovi recenzije: Introduction, Merits, Critique, Discussion, References. </p>
+		</br>
+		<div>
+			<label>Naslov dela recenzije: </label>
+			<input type="text"  value="Introduction, Merits, Critique, Discussion, References" ng-model = "reviewPart1.partTitle"/><br>
+		</div>
+		<div>
+			<label>Tekst: </label>
+			</br>
+			<textarea ng-model = "reviewPart1.partText"   rows="8" cols="50">
+				Tekst.
+			</textarea>
+		</div>
+		</br>
+		
+		<div>
+			<label>Naslov dela recenzije: </label>
+			
+			<input type="text"  value="Introduction, Merits, Critique, Discussion, References" ng-model = "reviewPart2.partTitle"/><br>
+		</div>
+		<div>
+			<label>Tekst: </label>
+			</br>
+			<textarea ng-model = "reviewPart2.partText"  rows="8" cols="50">
+				Tekst.
+			</textarea>
+		</div>
+		</br>
+		
+		<div>
+			<label>Naslov dela recenzije: </label>
+			<input type="text"  value="Introduction, Merits, Critique, Discussion, References" ng-model = "reviewPart3.partTitle"/><br>
+		</div>
+		<div>
+			<label>Tekst: </label>
+			</br>
+			<textarea ng-model = "reviewPart3.partText" rows="8" cols="50">
+				Tekst.
+			</textarea>
+		</div>
+		</br>
+		
+		<div>
+			<label>Naslov dela recenzije: </label>
+			<input type="text"  value="Introduction, Merits, Critique, Discussion, References" ng-model = "reviewPart4.partTitle"/><br>
+		</div>
+		<div>
+			<label>Tekst: </label>
+			</br>
+			<textarea ng-model = "reviewPart4.partText" rows="8" cols="50">
+				Tekst.
+			</textarea>
+		</div>
+		</br>
+		
+		<div>
+			<label>Naslov dela recenzije: </label>
+			<input type="text"  value="Introduction, Merits, Critique, Discussion, References" ng-model = "reviewPart5.partTitle"/><br>
+		</div>
+		<div>
+			<label>Tekst: </label>
+			</br>
+			<textarea ng-model = "reviewPart5.partText" rows="8" cols="50">
+				Tekst.
+			</textarea>
+		</div>
+		</br>
+		
+		<input type="submit" value = "Dodaj recenziju"/>
+	</form>
+</div>

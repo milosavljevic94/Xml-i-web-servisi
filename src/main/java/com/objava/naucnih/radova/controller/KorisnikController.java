@@ -105,6 +105,7 @@ public class KorisnikController {
         JAXBContext context = JAXBContext.newInstance(Korisnik.class);
 		Marshaller m = context.createMarshaller();
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+
 //		
 //		StringWriter sw = new StringWriter();
 //        m.marshal(k, sw);
@@ -112,6 +113,7 @@ public class KorisnikController {
         if(!f.exists()) { 
             m.marshal(k, new File("src/main/resources/data/korisnici/" + k.getUsername() + ".xml"));
         }
+
         
 	    // create the client
 		DatabaseClient client = DatabaseClientFactory.newClient(MarkLogicConfig.host,

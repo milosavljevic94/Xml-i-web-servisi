@@ -14,6 +14,7 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.marklogic.client.DatabaseClient;
@@ -33,7 +34,7 @@ public class RecenzijaController {
 	
 	List<Review> listaRecenzija = new ArrayList<Review>();
 	
-	@RequestMapping(value = "/addRecenziju")
+	@RequestMapping(value = "/addRecenziju", method = RequestMethod.POST)
 	public String addRecenzija() throws JAXBException, FileNotFoundException {
 		
 		Review recenzija = new Review();

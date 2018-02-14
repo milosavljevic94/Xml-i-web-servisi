@@ -65,5 +65,14 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider) {
 				controller : 'PageNotFoundController'
 			}
 		}
+	}).state('recenzija', {
+		parent : 'nav',
+		url : '/recenzija',
+		views : {
+			'content@' : {
+				templateUrl : 'app/views/recenzija.html',
+				controller : 'RecenzijaController'
+			}
+		}
 	});
 });

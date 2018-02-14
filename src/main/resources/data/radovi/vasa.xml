@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns5:nr_def xmlns="http://www.ftn.uns.ac.rs/naucni_radovi/naslovna" xmlns:ns2="http://www.ftn.uns.ac.rs/naucni_radovi/abstract" xmlns:ns3="http://www.ftn.uns.ac.rs/naucni_radovi/keywords" xmlns:ns4="http://www.ftn.uns.ac.rs/naucni_radovi/paper_text" xmlns:ns5="http://www.ftn.uns.ac.rs/naucni_rad">
+    <cover_page>
+        <title xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">vasa</title>
+        <author>
+            <first_name>qeqe</first_name>
+            <last_name>sasa</last_name>
+            <affiliation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">sasas</affiliation>
+            <author_address>
+                <street>saasa</street>
+                <street_number>22</street_number>
+                <city>sasa</city>
+                <country>sa</country>
+            </author_address>
+            <email>asa</email>
+            <phone_number>sasa</phone_number>
+            <ORCID>852145</ORCID>
+        </author>
+    </cover_page>
+    <ns2:abstract_text>s</ns2:abstract_text>
+    <ns3:keywords>
+        <ns3:keyword>asas</ns3:keyword>
+    </ns3:keywords>
+    <ns4:paper>
+        <ns4:primary_header>
+            <ns4:primary_header_title>as</ns4:primary_header_title>
+            <ns4:primary_header_text>sa</ns4:primary_header_text>
+        </ns4:primary_header>
+    </ns4:paper>
+</ns5:nr_def>
