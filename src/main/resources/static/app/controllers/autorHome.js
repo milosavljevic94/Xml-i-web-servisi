@@ -30,6 +30,53 @@ angular.module('app')
 		$scope.PrimaryHeader = {};
 		$scope.PrimaryHeader.primaryHeaderTitle;
 		$scope.PrimaryHeader.primaryHeaderText;
+		
+		$scope.nazivNaucnogRadaZaCoverLetter;
+		$scope.orcidZaCoverLetter;
+		
+		$scope.coverLetter = {};
+		$scope.coverLetter.titleText;
+		$scope.coverLetter.name = {};
+		$scope.coverLetter.nameOfUniversity;
+		$scope.coverLetter.universityAddress = {};
+		$scope.coverLetter.email;
+		$scope.coverLetter.recipient = {};
+		$scope.coverLetter.date;
+		$scope.coverLetter.letterText;
+		$scope.coverLetter.signature = {};
+		
+		$scope.coverLetterAutor = {};
+		$scope.coverLetterAutor.name;
+		$scope.coverLetterAutor.lastName;
+		
+		$scope.universityAddress = {};
+		$scope.universityAddress.street;
+		$scope.universityAddress.streetNumber;
+		$scope.universityAddress.city;
+		$scope.universityAddress.country;
+		$scope.universityAddress.postalNumber;
+		
+		$scope.recipient1 = {};
+		$scope.recipient1.name;
+		$scope.recipient1.lastName;
+		$scope.recipient1.role;
+		$scope.recipient1.journalName;
+		$scope.recipient = {};
+		$scope.recipient.recipientName;
+		$scope.recipient.recipientRole;
+		$scope.recipient.journalName;
+		
+		$scope.signature1 = {};
+		$scope.signature1.name;
+		$scope.signature1.lastName;
+		$scope.signature1.academicDegree;
+		$scope.signature1.department;
+		$scope.signature1.university;
+		$scope.signature = {};
+		$scope.signature.name;
+		$scope.signature.academicDegree;
+		$scope.signature.department;
+		$scope.signature.university;
 	};
 	
 	initializeValues();
@@ -157,6 +204,34 @@ angular.module('app')
 		    method: 'POST',
 		    url: 'api/add/nr/' + $scope.korisnik.orcid,
 		    data: $scope.nrDef
+		}).success(function(red){
+			init();
+		}).error(function(error) {
+			$scope.message = error.message;
+		});
+	};
+	
+	$scope.addCoverLetter = function() {
+		$scope.coverLetter.name = $scope.coverLetterAutor.name + " " + $scope.coverLetterAutor.lastName;
+		$scope.coverLetter.universityAddress = $scope.universityAddress;
+		
+		$scope.recipient.recipientName = $scope.recipient1.name + " " + $scope.recipient1.lastName;
+		$scope.recipient.recipientRole = $scope.recipient1.role;
+		$scope.recipient.journalName = $scope.recipient1.journalName;
+		$scope.coverLetter.recipient = $scope.recipient;
+		
+		$scope.coverLetter.date = new Date();
+		
+		$scope.signature.name = $scope.signature1.name + " " + $scope.signature1.lastName;
+		$scope.signature.academicDegree = $scope.signature1.academicDegree;
+		$scope.signature.department = $scope.signature1.department;
+		$scope.signature.university = $scope.signature1.university;
+		$scope.coverLetter.signature = $scope.signature;
+		
+		$http({ 
+		    method: 'POST',
+		    url: 'api/add/coverLetter/' + $scope.nazivNaucnogRadaZaCoverLetter + "/" + $scope.orcidZaCoverLetter,
+		    data: $scope.coverLetter
 		}).success(function(red){
 			init();
 		}).error(function(error) {

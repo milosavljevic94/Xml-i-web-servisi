@@ -67,6 +67,102 @@
 			<div class="alert alert-info margin-top-5" ng-show="message">{{message}}</div>
 		</form>
 	</div>
+	
+	<div class="col-sm-6">
+		<form ng-submit=addCoverLetter()>
+			<div>
+				<label>ORCID</label>
+				<input type="text" ng-model="orcidZaCoverLetter"/>
+			</div>
+			<div>
+				<label>Naucni Rad (Naziv)</label>
+				<input type="text" ng-model="nazivNaucnogRadaZaCoverLetter"/>
+			</div>
+			<div>
+				<label>Naziv</label>
+				<input type="text" ng-model="coverLetter.titleText"/>
+			</div>
+			<div>
+				<label>Ime</label>
+				<input type="text" ng-model="coverLetterAutor.name"/>
+			</div>
+			<div>
+				<label>Prezime</label>
+				<input type="text" ng-model="coverLetterAutor.lastName"/>
+			</div>
+			<div>
+				<label>Univerzitet</label>
+				<input type="text" ng-model="coverLetter.nameOfUniversity"/>
+			</div>
+			<div>
+				<label>Univerzitet - ulica</label>
+				<input type="text" ng-model="universityAddress.street"/>
+			</div>
+			<div>
+				<label>Univerzitet - broj ulice</label>
+				<input type="number" ng-model="universityAddress.streetNumber"/>
+			</div>
+			<div>
+				<label>Univerzitet - grad</label>
+				<input type="text" ng-model="universityAddress.city"/>
+			</div>
+			<div>
+				<label>Univerzitet - drzava</label>
+				<input type="text" ng-model="universityAddress.country"/>
+			</div>
+			<div>
+				<label>Univerzitet - postanski broj</label>
+				<input type="text" ng-model="universityAddress.postalNumber"/>
+			</div>
+			<div>
+				<label>Email</label>
+				<input type="text" ng-model="coverLetter.email"/>
+			</div>
+			<div>
+				<label>Primalac - Ime</label>
+				<input type="text" ng-model="recipient1.name"/>
+			</div>
+			<div>
+				<label>Primalac - Prezime</label>
+				<input type="text" ng-model="recipient1.lastName"/>
+			</div>
+			<div>
+				<label>Primalac - Uloga</label>
+				<input type="text" ng-model="recipient1.role"/>
+			</div>
+			<div>
+				<label>Naziv casopisa</label>
+				<input type="text" ng-model="recipient1.journalName"/>
+			</div>
+			<div>
+				<label>Tekst pisma</label>
+				<input type="text" ng-model="coverLetter.letterText"/>
+			</div>
+			<div>
+				<label>Potpis - ime</label>
+				<input type="text" ng-model="signature1.name"/>
+			</div>
+			<div>
+				<label>Potpis - prezime</label>
+				<input type="text" ng-model="signature1.lastName"/>
+			</div>
+			<div>
+				<label>Potpis - obrazovanje</label>
+				<input type="text" ng-model="signature1.academicDegree"/>
+			</div>
+			<div>
+				<label>Potpis - departman</label>
+				<input type="text" ng-model="signature1.department"/>
+			</div>
+			<div>
+				<label>Potpis - univerzitet</label>
+				<input type="text" ng-model="signature1.university"/>
+			</div>
+			<button type="submit" class="btn btn-default">Posalji</button>
+				
+			<div class="alert alert-info margin-top-5" ng-show="message">{{message}}</div>
+		</form>
+	</div>
 
 	<div class="col-sm-6">
 			<div class="panel panel-default">

@@ -14,7 +14,7 @@ angular.module('app')
 	$scope.$on('LoginSuccessful', function() {
 		$scope.user = AuthService.user;
 		$scope.userAutor = checkOption("Autor", AuthService.user.roles.role);
-		$scope.userUrednik = checkOption("urednik", AuthService.user.roles.role);
+		$scope.userUrednik = checkOption("Urednik", AuthService.user.roles.role);
 	});
 	$scope.$on('LogoutSuccessful', function() {
 		$scope.user = null;

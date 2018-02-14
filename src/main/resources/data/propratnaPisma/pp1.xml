@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<cover_letter xmlns="http://www.ftn.uns.ac.rs/naucni_radovi/cover_letter">
+    <title_text xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">pp1</title_text>
+    <name xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">autor4 autor4</name>
+    <name_of_university xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xsi:type="xs:string">sfagas</name_of_university>
+    <university_address>
+        <street>asada</street>
+        <street_number>4</street_number>
+        <city>safa</city>
+        <country>safasf</country>
+        <postal_number>50000</postal_number>
+    </university_address>
+    <email>asgasg</email>
+    <recipient>
+        <recipient_name>Pera Peric</recipient_name>
+        <recipient_role>Recenzent</recipient_role>
+        <journal_name>sagahg</journal_name>
+    </recipient>
+    <date>2018-02-14Z</date>
+    <letter_text>agasgas</letter_text>
+    <signature>
+        <name>autor4 autor4</name>
+        <academic_degree>gaga</academic_degree>
+        <department>gsagas</department>
+        <university>asgas</university>
+    </signature>
+</cover_letter>
