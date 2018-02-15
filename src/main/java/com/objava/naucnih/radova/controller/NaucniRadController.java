@@ -12,6 +12,11 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.stream.StreamResult;
+import javax.xml.transform.stream.StreamSource;
 
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -114,7 +119,7 @@ public class NaucniRadController {
 		Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
 		
         for (DocumentRecord document: documents) {
-        	if(!document.getUri().contains("http://localhost:8011/korisnici/")){
+        	if(document.getUri().contains("http://localhost:8011/naucni_radovi/")){
         		
 	            System.out.println(document.getUri());
 	            String[] uriSplitted = document.getUri().split("/");
@@ -387,5 +392,26 @@ public class NaucniRadController {
 		client.release();
 		
 		return naucniRadovi;
+	}
+	
+	@RequestMapping(value = "/transform/nr/{nazivRada}", method = RequestMethod.GET)
+	public void transformNaucniRad(@PathVariable String nazivRada){
+		try {
+	       File stylesheet = new File("src/main/resources/xml_scheemas/XSL/NaucniRad.xsl");
+	       File xmlfile = new File("src/main/resources/data/radovi/"+nazivRada+".xml");
+	       StreamSource stylesource = new StreamSource(stylesheet);
+	       StreamSource xmlsource = new StreamSource(xmlfile);
+	       Transformer transformer = TransformerFactory.newInstance()
+	                                 .newTransformer(stylesource);
+	       
+	       // Transform the document and store it in a file
+	       transformer.transform(xmlsource, new StreamResult(new File("src/main/resources/static/app/views/"+nazivRada+".html")));
+	       
+	       StreamResult consoleOut = new StreamResult(System.out);
+	       // Transform the document and print the content to console
+	       transformer.transform(xmlsource, consoleOut);
+	     } catch (TransformerException e) {
+	              e.printStackTrace();
+	     }
 	}
 }

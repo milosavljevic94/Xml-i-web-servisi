@@ -24,7 +24,9 @@ angular.module('app')
 	$scope.details = function(rad) {
 		
 		$rootScope.detailViewRad = rad;
-		
+		$http.get('api/transform/nr/'+rad.coverPage.title).success(function(res){
+			alert("uspesno");
+		});
 		$state.go('radDetails');
 	};
 	
