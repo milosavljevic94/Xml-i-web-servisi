@@ -29,6 +29,15 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider) {
 				controller : 'UrednikController',
 			}
 		}
+	}).state('radDetails', {
+		parent : 'nav',
+		url : '/radDetails',
+		views : {
+			'content@' : {
+				templateUrl : 'app/views/radDetails.html',
+				controller : 'UrednikController',
+			}
+		}
 	}).state('home', {
 		parent : 'nav',
 		url : '/',

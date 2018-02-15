@@ -86,6 +86,57 @@ public class NaucniRadController {
 		return naucniRadovi;
 	}
 	
+	@RequestMapping(value = "/nr/getAll", method = RequestMethod.GET)
+	public List<NrDef> getAllNaucniRadovi() throws JAXBException{
+		
+		DatabaseClient client = DatabaseClientFactory.newClient(MarkLogicConfig.host,
+				MarkLogicConfig.port, MarkLogicConfig.admin,
+				MarkLogicConfig.password, MarkLogicConfig.authType);
+		
+		// create a manager for XML documents
+		XMLDocumentManager docMgr = client.newXMLDocumentManager();			
+		
+		QueryManager qm = client.newQueryManager();
+
+        // Build query
+		StringQueryDefinition query = 
+		        qm.newStringDefinition().withCriteria("");
+        
+        // Perform the multi-document read and process results
+        DocumentPage documents = docMgr.search(query, 1);
+        /*System.out.println("Total matching documents (urednik): "
+            + documents.getTotalSize());*/
+        DOMHandle handle = new DOMHandle();
+        List<NrDef> naucniRadovi = new ArrayList<>();
+        
+        JAXBContext jaxbContext = JAXBContext.newInstance(NrDef.class);
+
+		Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
+		
+        for (DocumentRecord document: documents) {
+        	if(!document.getUri().contains("http://localhost:8011/korisnici/")){
+        		
+	            System.out.println(document.getUri());
+	            String[] uriSplitted = document.getUri().split("/");
+	            if(uriSplitted.length==6) {
+		            docMgr.read(document.getUri(), handle);
+		    		
+		    		StringReader reader = new StringReader(handle.toString());
+		    		NrDef papre = (NrDef) jaxbUnmarshaller.unmarshal(reader);
+		    		
+		    		naucniRadovi.add(papre);
+		            // Do something with the content using document.getContent()
+	            }
+        	}
+
+        }
+
+//		release the client
+		client.release();
+		
+		return naucniRadovi;
+	}
+	
 	@RequestMapping(value = "/nr/{orcid}/{title}", method = RequestMethod.DELETE)
 	public List<NrDef> deleteRad(@PathVariable String orcid, @PathVariable String title) throws JAXBException {
 		DatabaseClient client = DatabaseClientFactory.newClient(MarkLogicConfig.host,

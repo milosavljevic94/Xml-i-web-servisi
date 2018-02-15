@@ -1,0 +1,67 @@
+<div class="col-sm-6" ng-controller="UrednikController">
+	<div>
+		<div>
+			<label>Naziv rada</label>
+			{{detailViewRad.coverPage.title}}
+		</div>
+		<div>
+			<label>Ime autora</label>
+			{{detailViewRad.coverPage.author[0].firstName}}
+		</div>
+		<div>
+			<label>Prezime autora</label>
+			{{detailViewRad.coverPage.author[0].lastName}}
+		</div>
+		<div>
+			<label>Affiliation</label>
+			{{detailViewRad.coverPage.author[0].affiliation}}
+		</div>
+		<div>
+			<label>Email</label>
+			{{detailViewRad.coverPage.author[0].email}}
+		</div>
+		<div>
+			<label>Broj telefona</label>
+			{{detailViewRad.coverPage.author[0].phoneNumber}}
+		</div>
+		<div>
+			<label>ORCID</label>
+			{{detailViewRad.coverPage.author[0].orcid}}
+		</div>
+		<div>
+			<label>Ulica autora</label>
+			{{detailViewRad.coverPage.author[0].authorAddress.street}}
+		</div>
+		<div>
+			<label>Broj ulice</label>
+			{{detailViewRad.coverPage.author[0].authorAddress.streetNumber}}
+		</div>
+		<div>
+			<label>Grad</label>
+			{{detailViewRad.coverPage.author[0].authorAddress.city}}
+		</div>
+		<div>
+			<label>Drzava</label>
+			{{detailViewRad.coverPage.author[0].authorAddress.country}}
+		</div>
+		<div>
+			<label>Abstract</label>
+			{{detailViewRad.abstractText}}
+		</div>
+		<div>
+			<label>Kljucne reci</label>
+			{{detailViewRad.keywords}}
+		</div>
+		<div>
+			<label>Naziv headera</label>
+			{{detailViewRad.paper.primaryHeader.primaryHeaderTitle}}
+		</div>
+		<div>
+			<label>Header text</label>
+			{{detailViewRad.paper.primaryHeader.primaryHeaderText}}
+		</div>
+		<button ng-click="back()" class="btn btn-default">Back</button>
+			
+		<div class="alert alert-info margin-top-5" ng-show="message">{{message}}</div>
+	</div>
+</div>

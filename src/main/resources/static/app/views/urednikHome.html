@@ -1,20 +1,49 @@
-<div  ng-controller="UrednikController">
+	<div class="col-sm-6" ng-controller="UrednikController">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					Svi radovi
+				</div>
+				<div class="panel-body">
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>Title</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="rad in radovi">
+								<td>{{$index+1}}</td>
+								<td>{{rad.coverPage.title}}</td>
+								<td><button type="button" class="btn btn-default btn-sm"
+										ng-click="details(rad)">Details
+									</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+	</div>
+
+<!--<div  ng-controller="UrednikController">
 			<table border="1">
 				<thead>
 					<tr>
-						<td align="center"><a href="#/urednikHome" ng-click="sortType = 'rad.coverPage.title'; sortReverse = !sortReverse;">Title</a></td>
+						<td align="center"><a href="#/urednikHome" ng-click="sortType = 'coverPage.title'; sortReverse = !sortReverse;">Title</a></td>
 					</tr>
 				</thead>
 				<tbody>
 				  	<tr ng-repeat="rad in radovi">
 						<td align="center">{{rad.coverPage.title}}</td>
-				  		<!--<td align="center"><button type="button" class='btn btn-default' ng-click="detailView(rad)">Details</button></td>-->
+				  		<td align="center"><button type="button" class='btn btn-default' ng-click="detailView(rad)">Details</button></td>
 					</tr>
-					<tr>
+					<tr>-->
 						<!--<td><input type="text" id="pretragaRadova" ng-model="search"></td>
 						 | orderBy:sortType:sortReverse | filter:{ coverPage.title : search }-->
-						<td></td>
+						<!-- <td></td>
 					</tr>
 				</tbody>
 			</table>
-</div>
+</div>-->
