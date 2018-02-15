@@ -5,6 +5,7 @@ angular.module('app')
 .controller('UrednikController', function($http, $scope, AuthService, $state, $rootScope) {
 	
 	//$scope.korisnik = AuthService.user;
+	$scope.radovi = {};
 	$rootScope.detailViewRad;
 	
 	var init = function(){
@@ -24,15 +25,24 @@ angular.module('app')
 	$scope.details = function(rad) {
 		
 		$rootScope.detailViewRad = rad;
-		$http.get('api/transform/nr/'+rad.coverPage.title).success(function(res){
-			alert("uspesno");
-		});
+
 		$state.go('radDetails');
+	};
+	
+	$scope.asHtml = function(rad) {
+		
+		$rootScope.detailViewRad = rad;
+		$http.get('api/transform/nr/'+rad.coverPage.title).success(function(res){
+			//alert("uspesno");
+			//$state.href('app.views.'+$rootScope.detailViewRad.coverPage.title+'.html', {}, {absolute: false});
+			//$state.go('asHtml',[rad.coverPage.title]);
+		});
+		//$state.href('app/views/'+rad.coverPage.title+'.html');
 	};
 	
 	$scope.back = function() {
 		
 		$state.go('urednikHome');
-	}
+	};
 
 });

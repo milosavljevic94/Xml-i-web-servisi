@@ -38,6 +38,17 @@ angular.module('app').config(function($stateProvider, $urlRouterProvider) {
 				controller : 'UrednikController',
 			}
 		}
+	}).state('asHtml', {
+		parent : 'nav',
+		url : '/asHtml/{radName}'+'.html',
+		views : {
+			'content@' : {
+				//templateUrl : 'app/views/{radName}'+'.html',
+				controller : function (radName) {
+					templateUrl : 'app/views/'+radName+'.html'
+		        }
+			}
+		}
 	}).state('home', {
 		parent : 'nav',
 		url : '/',

@@ -20,6 +20,12 @@
 										ng-click="details(rad)">Details
 									</button>
 								</td>
+								<!--<td><button type="button" class="btn btn-default btn-sm"
+										ng-click="asHtml(rad)">AsHtml
+									</button>
+								</td>-->
+								<td><a ng-click="asHtml(rad)" ng-href="app/views/{{rad.coverPage.title}}.html">View as Html</a>
+								</td>
 							</tr>
 						</tbody>
 					</table>
