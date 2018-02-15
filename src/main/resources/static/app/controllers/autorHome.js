@@ -3,6 +3,17 @@ angular.module('app')
 // Creating the Angular Controller
 
 .controller('AutorController', function($http, $scope, AuthService, $state) {
+	$scope.radovi = [];
+	
+	$scope.title_search = "";
+	
+	$scope.pretraga_title = function(title){
+		$http.get('api/nr/title/' + $scope.korisnik.orcid + '/' + $scope.title_search).success(function(res){
+			$scope.radovi = res;
+		}).error(function(err){
+			alert(JSON.stringify(err));
+		});
+	}
 	
 	$scope.korisnik = AuthService.user;
 	$scope.buttonText = "Dodaj";
@@ -81,7 +92,7 @@ angular.module('app')
 	
 	initializeValues();
 	
-	$scope.radovi = [];
+	
 	
 	var init = function(){
 		$http.get('api/nr/' + $scope.korisnik.orcid).success(function(res){

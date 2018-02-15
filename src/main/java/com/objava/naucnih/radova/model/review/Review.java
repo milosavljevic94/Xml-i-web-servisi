@@ -168,8 +168,15 @@ public class Review {
         return this.reviewPart;
     }
 
+    @Override
+	public String toString() {
+		return "Review [title=" + title + ", info=" + info + ", reviewPart=" + reviewPart + "]";
+	}
 
     /**
+=======
+	/**
+>>>>>>> Stashed changes
      * <p>Java-Klasse f�r anonymous complex type.
      * 
      * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
@@ -276,6 +283,14 @@ public class Review {
         public void setReviewScore(String value) {
             this.reviewScore = value;
         }
+
+		@Override
+		public String toString() {
+			return "Info [reviewAutor=" + reviewAutor + ", manuscriptAutor=" + manuscriptAutor + ", reviewScore="
+					+ reviewScore + "]";
+		}
+        
+        
 
     }
 
@@ -420,6 +435,14 @@ public class Review {
             this.partScore = value;
         }
 
+		@Override
+		public String toString() {
+			return "ReviewPart [partTitle=" + partTitle + ", partText=" + partText + ", recommendations="
+					+ recommendations + ", partScore=" + partScore + "]";
+		}
+        
+        
+
     }
 
 
@@ -530,6 +553,14 @@ public class Review {
         public void setRevisionRecommend(String value) {
             this.revisionRecommend = value;
         }
+
+		@Override
+		public String toString() {
+			return "Title [typeOfReview=" + typeOfReview + ", manuscriptTitle=" + manuscriptTitle
+					+ ", revisionRecommend=" + revisionRecommend + "]";
+		}
+        
+        
 
     }
 
